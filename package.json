@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .ts,.js,.vue ."
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "nuxt": "^3.12.4",
+    "sass": "^1.77.6",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "eslint": "^8.57.0",
+    "mongoose": "^8.8.2",
+    "typescript": "^5.5.4",
+    "vue-tsc": "^2.0.29"
+  }
+}
