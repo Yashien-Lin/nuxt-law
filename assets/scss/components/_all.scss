@@ -1,0 +1,192 @@
+body {
+  overflow-x: hidden;
+  font-size: $font-size-base;
+  color: $dark-80;
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  // @include iphone-save-area;
+
+  &.body-zh {
+    .ls-4 {
+      letter-spacing: 4px;
+    }
+
+    .ls-3 {
+      letter-spacing: 3px;
+    }
+
+    $media-array: "xl", "lg", "md", "sm";
+
+    @each $key in $media-array {
+      .lh-#{$key}-sm {
+        line-height: 1.5 !important;
+      }
+    }
+
+    .lh-sm {
+      line-height: 1.5 !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.5 !important;
+    }
+  }
+}
+
+// headings
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0;
+}
+
+small {
+  display: block;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  li {
+      list-style-type: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: currentcolor;
+
+  &:hover {
+    color: currentcolor;
+  }
+
+  &.link-underline {
+    text-decoration: underline;
+  }
+}
+
+.container-with-navbar {
+  min-height: calc(100vh - $header-height-sm - $footer-height-sm);
+	margin-top: $header-height-sm;
+  
+	@include media-md {
+    min-height: calc(100vh - $header-height - $footer-height);
+		margin-top: $header-height;
+	}
+}
+
+// custom scrollbar
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  overflow: visible;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $dark-30;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+// v-show slide animation
+.slide-enter-active {
+  animation: slide 0.2s ease-in-out;
+}
+
+.slide-leave-active {
+  animation: slide 0.2s ease-in-out reverse;
+}
+
+@keyframes slide {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+}
+
+// disabled 狀態
+*.disabled {
+  pointer-events: none;
+
+  .form-select, .form-control, .ck .ck.ck-content, .ck-sticky-panel .ck-toolbar {
+    background-color: $dark-30;
+  }
+
+  textarea.form-control, input.form-control {
+    padding: 5rem;
+    pointer-events: initial;
+  }
+
+  button.btn, a.btn {
+    color: $dark-60;
+    background-color: $dark-30 !important;
+    border-color: $dark-30 !important;
+    opacity: 1;
+  }
+
+  .btn-check + .btn {
+    opacity: .65;
+    filter: none;
+    pointer-events: none;
+  }
+
+  .form-check-input {
+    opacity: .5;
+    filter: none;
+  }
+}
+
+.material-symbols-outlined {
+  max-width: 24px;
+  max-height: 24px;
+  font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+
+  &.fill-0 {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+.main-container {
+	// margin-top: 80px;
+	padding: 16px;
+	max-width: 100%;
+	min-height: calc(100vh - 160px);
+
+  // @include media-lg {
+  //   padding-right: 32px;
+  //   padding-left: 32px;
+  // }
+}
+
+.main-content {
+	margin-bottom: 64px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1280px;
+  max-width: 100%;
+}
+
+// .nuxt-loading-indicator {
+//   background: repeating-linear-gradient(to right, rgb(245, 245, 245) 0%, rgb(224, 173, 138) 40%, rgb(43, 47, 48) 70%, rgb(0, 0, 0) 100%) !important;
+// } 
+
+// spinner
+// .spinner-border {
+//   width: 1rem;
+//   height: 1rem;
+//   border-width: 0.4em;
+// }

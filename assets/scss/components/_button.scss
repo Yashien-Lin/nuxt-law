@@ -1,0 +1,96 @@
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+  font-size: $font-size-sm;
+
+  &:disabled {
+    color: $dark-gray;
+		background-color: $light-gray !important;
+		border-color: $light-gray !important;
+		pointer-events: none;
+		opacity: 1;
+  }
+
+	&:hover, &:active, &.active, &:focus, &.active:focus &:active:focus {
+		outline: none !important;
+		box-shadow: none !important;
+	}
+
+  &.btn-outline-primary {
+    background-color: $white;
+
+    &:hover, &:active, &.active, &:focus, &.active:focus, &:active:focus {
+      color: $primary;
+      background-color: $primary-10;
+    }
+
+    &.border-0:disabled {
+      color: $light-gray;
+      background-color: transparent !important;
+    }
+  }
+
+  &.btn-outline-secondary {
+    background-color: $white;
+
+    &:hover, &:active, &.active, &:focus, &.active:focus, &:active:focus {
+      color: $secondary;
+      background-color: $secondary-10;
+    }
+  }
+
+  &.btn-outline-dark-gray {
+    background-color: $white;
+
+    &:hover, &:active, &.active, &:focus, &.active:focus, &:active:focus {
+      color: $dark-gray;
+      background-color: $light-gray-20;
+      border-color: $dark-gray;
+    }
+  }
+
+	&.btn-light-gray {
+		color: $dark-gray;
+		background-color: rgba($light-gray, .3);
+		border: rgba($light-gray, .3);
+
+		&:hover, &:active, &.active, &:focus, &.active:focus, &:active:focus {
+			background-color: rgba($light-gray, .5);
+      border: rgba($light-gray, .5);
+    }
+	}
+
+  &.btn-sm {
+    font-size: 0.875rem;
+    border-radius: $border-radius;
+  }
+
+	.material-symbols-outlined {
+		font-size: 1.25rem;
+	}
+}
+
+.btn-close:focus {
+	box-shadow: none;
+}
+
+.btn-check {
+  + .btn {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-color: $light-gray;
+  }
+
+  &:focus + .btn, &:hover + .btn {
+    border-color: $light-gray;
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:checked + .btn-outline-dark-gray {
+    color: $secondary;
+    background-color: $off-white;
+    border-color: $light-gray;
+  }
+}

@@ -1,0 +1,17 @@
+$header-height-sm: 72px;
+$header-height: 80px;
+$footer-height-sm: 72px;
+$footer-height: 80px;
+
+$spacer: 1rem;
+$spacers: (
+	0: 0,
+	1: $spacer * .25,
+	2: $spacer * .5,
+	3: $spacer,
+	4: $spacer * 1.5,
+	5: $spacer * 2.5,
+	6: $spacer * 3.5,
+	7: $spacer * 4.5,
+	8: $spacer * 5.5
+);

@@ -1,0 +1,45 @@
+$primary: #deba67 !default;
+$danger: #D76262 !default;
+$light: #fffdf1 !default;
+$black: #000 !default;
+$dark: #626161 !default;
+$white: #fff !default;
+$transparent: transparent !default;
+$theme-colors: (
+	"primary": $primary,
+	"danger": $danger,
+	"light": $light,
+  "black": $black,
+  "dark": $dark,
+  "white": $white,
+  "transparent": $transparent
+);
+$primary-100: #D49D4C;
+$primary-80: $primary;
+$primary-base: (
+  "primary-100": $primary-100,
+	"primary-80": $primary-80,
+) !default;
+
+$danger-100: $danger;
+$danger-60: #E7A1A1;
+$danger-30: #F3D0D0;
+$danger-base: (
+	"danger-100": $danger-100,
+	"danger-60": $danger-60,
+	"danger-30": $danger-30
+) !default;
+$dark-100: $dark;
+$dark-80: #121212;
+$dark-60: #3A3A3A;
+$dark-30: #8C8C8C;
+$gray-base: (
+	"dark-100": $dark-100,
+	"dark-80": $dark-80,
+  "dark-60": $dark-60,
+	"dark-30": $dark-30
+) !default;
+
+// base color
+$body-color: $black;
+$input-placeholder-color: $dark-30;
