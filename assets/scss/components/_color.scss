@@ -1,5 +1,6 @@
-$primary: #deba67 !default;
+$primary: #d69809 !default;
 $danger: #D76262 !default;
+$blue: #102b8d !default;
 $light: #fffdf1 !default;
 $black: #000 !default;
 $dark: #626161 !default;
@@ -8,14 +9,17 @@ $transparent: transparent !default;
 $theme-colors: (
 	"primary": $primary,
 	"danger": $danger,
+  "blue": $blue,
 	"light": $light,
   "black": $black,
   "dark": $dark,
   "white": $white,
   "transparent": $transparent
 );
-$primary-100: #D49D4C;
-$primary-80: $primary;
+$primary-100: $primary;
+$primary-80: #D49D4C;
+$primary-60: #e0b471;
+$primary-40: #e0c090;
 $primary-base: (
   "primary-100": $primary-100,
 	"primary-80": $primary-80,
