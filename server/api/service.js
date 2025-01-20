@@ -13,18 +13,18 @@ export default defineEventHandler(async (event) => {
     // 連接 MongoDB Atlas
     await client.connect();
     const database = client.db('nuxt_app_law'); // 替換為你的資料庫名稱
-    const collection = database.collection('cases'); // 替換為你的集合名稱
+    const collection = database.collection('services'); // 替換為你的集合名稱
 
     // 查詢資料
     const query = {}; // 可根據需求修改查詢條件
     const data = await collection.find(query).toArray();
 
     // 返回 JSON 格式資料
-    // console.log('MongoDB 查詢結果:', data);
+    // console.log('MongoDB service 查詢結果:', data);
     return { success: true, data };
     
   } catch (error) {
-    console.error('MongoDB 查詢錯誤:', error);
+    console.error('MongoDB service 查詢錯誤:', error);
     return { success: false, error: error.message };
   } finally {
     // 不關閉連接，使用全域連接以節省資源

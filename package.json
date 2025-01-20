@@ -11,7 +11,10 @@
     "lint": "eslint --ext .ts,.js,.vue ."
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/vue-splide": "^0.6.12",
     "bootstrap": "^5.3.3",
+    "mongodb": "^6.12.0",
     "nuxt": "^3.12.4",
     "sass": "^1.77.6",
     "vue": "latest"
@@ -19,7 +22,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "eslint": "^8.57.0",
-    "mongoose": "^8.8.2",
+    "mongoose": "^8.9.0",
     "typescript": "^5.5.4",
     "vue-tsc": "^2.0.29"
   }

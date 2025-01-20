@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
     // 連接 MongoDB Atlas
     await client.connect();
     const database = client.db('nuxt_app_law'); // 替換為你的資料庫名稱
-    const collection = database.collection('cases'); // 替換為你的集合名稱
+    const collection = database.collection('team'); // 替換為你的集合名稱
 
     // 查詢資料
     const query = {}; // 可根據需求修改查詢條件

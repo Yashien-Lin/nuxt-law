@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-07-22',
   devtools: { enabled: true },
-  css: ['@/assets/scss/app.scss'],
+  css: [
+    '@/assets/scss/app.scss',
+    '@splidejs/splide/dist/css/splide.min.css'
+  ],
   postcss: { // CSS 屬性加上瀏覽器相容性前綴
     plugins: {
       autoprefixer: true
@@ -27,13 +30,11 @@ export default defineNuxtConfig({
     color: '#3B82F6',
     background: 'white',
   },
-  nitro: {
-    plugins: [
-      '@/server/index'
-    ]
-  },
   typescript: {
     typeCheck: true
+  },
+  runtimeConfig: {
+    mongodbUri: process.env.MONGODB_URI, // 僅服務端可用
   },
   vue: {
     config: {
