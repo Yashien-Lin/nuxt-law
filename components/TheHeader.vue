@@ -1,34 +1,24 @@
 <template>
   <nav>
-    <NuxtLink to="/" class="h-100">
-      <img src="/images/logo.png" alt="logo" class="h-100">
+    <NuxtLink to="/" class="h-100 d-flex align-items-center">
+      <img src="/images/logo.png" alt="logo" class="h-100 me-1">
+      <h1 class="fs-6">茂宇聯合法律事務所</h1>
     </NuxtLink>
     <ul class="nav-links">
       <li>
-        <NuxtLink to="/">
-          Home
-        </NuxtLink>
+        <NuxtLink to="/about">關於茂宇</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/about">
-          About
-        </NuxtLink>
+        <NuxtLink to="/team">團隊成員</NuxtLink>
       </li>
       <li>
-          <NuxtLink to="/team">Our Team</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/case">Cases</NuxtLink>
-        </li>
-      <li>
-        <NuxtLink to="/contact">
-          Contact
-        </NuxtLink>
+        <NuxtLink to="/service">服務項目</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/login">
-          Log in
-        </NuxtLink>
+        <NuxtLink to="/case">案例分享</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/contact">聯絡我們</NuxtLink>
       </li>
     </ul>
   </nav>

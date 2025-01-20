@@ -1,5 +1,8 @@
 <template>
-  <ul class="footer-links">
+  <div class="footer-links">
+    <p>© 2024 茂宇聯合法律事務所 All Rights Reserved</p>
+  </div>
+  <!-- <ul class="footer-links">
     <li>
       <NuxtLink>
         User Info
@@ -14,7 +17,7 @@
     <li>
       <a href="">Customer Service</a>
     </li>
-  </ul>
+  </ul> -->
 </template>
 
 <style lang="scss" scoped>
@@ -29,9 +32,11 @@
   color: #fff;
   background-color: #333;
   list-style: none;
+  font-size: 0.875rem;
 
   @include media-md() {
     height: $footer-height;
+    font-size: 1rem;
   }
 
   a {

@@ -1,0 +1,12 @@
+.splide__track {
+  height: 100%;
+}
+.splide__pagination {
+  .splide__pagination__page {
+    background-color: $black; /* 點點的顏色 */
+  }
+
+  .splide__pagination__page.is-active {
+    background-color: $primary; /* 被選中點點的顏色 */
+  }
+}
