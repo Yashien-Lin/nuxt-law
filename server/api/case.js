@@ -1,9 +1,7 @@
 import { MongoClient } from 'mongodb';
 
 // MongoDB Atlas 連接字串，請替換 <username> 和 <password>
-// const uri = process.env.MONGODB_URI;
 const uri = useRuntimeConfig().mongodbUri;
-console.log('uri:', uri);
 
 // 建立 MongoClient 實例
 const client = new MongoClient(uri);

@@ -14,7 +14,7 @@
         <h2 class="mb-3">專業律師</h2>
       </div>
       <div class="w-100 d-flex flex-wrap justify-content-end">
-        <button type="button" class="btn btn-primary text-white" @click="addTeam">增加成員</button>
+        <button type="button" class="btn btn-primary" @click="addTeam">增加成員</button>
       </div>
       <clientOnly>
         <div v-if="isLoading" class="d-flex gap-4">
@@ -28,8 +28,8 @@
             <span class="visually-hidden"></span>
           </div>
         </div>
-        <div v-if="!isLoading && data.data?.length != 0" class="row g-4">
-          <div class="col-12 col-sm-6 col-md-3" v-for="item in data.data" :key="item.id">
+        <div v-if="!isLoading && TeamData.data?.length != 0" class="row g-4">
+          <div class="col-12 col-sm-6 col-md-3" v-for="item in TeamData.data" :key="item.id">
             <div class="card h-100">
               <img :src="item.image" :alt="item.image" class="card-img-top" alt="case1">
               <div class="card-body d-flex flex-column justify-content-between px-lg-4">
@@ -63,23 +63,23 @@
 
 const isLoading = ref(false);
 const form = ref({
-  _id: '',
-  name: '測試名字',
-  fields: ['民事', '刑事', '商法', '國際法'],
-  image: '/images/member2.jpg',
-  experiences: [],
-  title: '首席律師',
+  // _id: '',
+  name: '陳柏毅 律師',
+  fields: ['消費者保護', '醫療糾紛', '行政訴訟'],
+  image: '/images/member6.jpg',
+  experiences: ['輔仁大學法律系學士', '曾於國內知名律師事務所擔任訴訟律師', '公益訴訟協會成員'],
+  title: '合夥律師',
 });
 
 // 取得資料
-const { data: data, error } = useFetch('/api/team', {
+const { data: TeamData, error } = useFetch('/api/team', {
   async onRequest() {
     isLoading.value = true;
   },
   onResponse() {
     // 請求完成後將 isLoading 設置為 false
     setTimeout(() => {
-      console.log('onResponse:', data.value);
+      console.log('onResponse:', TeamData.value);
       console.log('error:', error.value);
       
       // 模擬延遲，並設置 loading 狀態
@@ -119,15 +119,14 @@ const { data: postData, refresh: addTeam} = useFetch('/api/team', {
 })
 watch(postData, () => {
   // if (postData.value) {
-    data.value.data = postData.value;
-    console.log('watch data:', data.value);
+    TeamData.value.data = postData.value;
+    console.log('watch data:', TeamData.value);
   // }
 })
 
 // 刪除成員
-// const deleteData = ref([]);
 const deleteTeam = async (id) => {
-  const deleteData = await $fetch(`/api/team/${id}`, {
+  const { data, error} = await $fetch(`/api/team/${id}`, {
     method: 'DELETE',
     immediate: false,
     async onRequest() {
@@ -137,11 +136,12 @@ const deleteTeam = async (id) => {
     onResponse() {
       // 請求完成後將 isLoading 設置為 false
       setTimeout(() => {
-        console.log('delete onResponse:', deleteData);
-        console.log('delete error:', error.value);
+        // console.log('delete onResponse:', deleteData);
+        console.log('delete ok:', data);
         
         // 模擬延遲，並設置 loading 狀態
         isLoading.value = false;
+        TeamData.value.data = data;
 
       }, 500);  // 模擬延遲
     },

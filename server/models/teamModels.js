@@ -2,25 +2,25 @@ import mongoose from 'mongoose';
 
 // 建立 Schema
 const teamSchema = new mongoose.Schema({
-  _id: {
-    type: 'number',
-    required: false,
-    unique: true
-  },
+  // _id: { 
+  //   type: 'number',
+  //   required: false,
+  //   unique: true
+  // },
   image: {
-    type: 'string',
+    type: String,
     required: true
   },
   name: {
-    type: 'string',
+    type: String,
     required: true
   },
-  experience: {
-    type: 'Array',
+  experiences: {
+    type: [String],
     required: true,
   },
   fields: {
-    type: 'Array',
+    type: [String],
     required: true,
   }
 }, {
