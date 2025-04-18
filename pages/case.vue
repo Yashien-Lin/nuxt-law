@@ -8,7 +8,7 @@
         我們的專業與努力，讓每一位客戶在法律挑戰中獲得最佳保障，並深受信賴與肯定。
       </p>
     </div>
-    <div class="d-flex flex-column justify-content-center gap-4 py-6 px-4">
+    <div class="main-content d-flex flex-column justify-content-center gap-4 py-6 px-4">
       <div class="card mb-3 border-0 border-bottom rounded-0 pb-4 ">
         <div class="row g-0">
           <div class="col-md-4">
@@ -17,7 +17,7 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">民事糾紛 - 房屋租賃糾紛</h5>
-              <p class="card-text">
+              <p class="card-text lh-lg">
                 張先生因租屋合約未到期即遭房東提前終止租約，並被要求立即搬離。房東同時拒絕退還租金押金，聲稱張先生違反了合約條款。
                 張先生因租屋合約未到期即遭房東提前終止租約，並被要求立即搬離。房東同時拒絕退還租金押金，聲稱張先生違反了合約條款。
                 張先生因租屋合約未到期即遭房東提前終止租約，並被要求立即搬離。房東同時拒絕退還租金押金，聲稱張先生違反了合約條款。
@@ -28,18 +28,6 @@
         </div>
       </div>
     </div>
-
-    <!-- 輪播 -->
-    <!-- <ClientOnly>
-      <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
-        <SplideSlide>
-          <img src="/images/case1.jpg" alt="Sample 1">
-        </SplideSlide>
-        <SplideSlide>
-          <img src="/images/case2.jpg" alt="Sample 2">
-        </SplideSlide>
-      </Splide>
-    </ClientOnly> -->
   </div>
 </template>
 

@@ -17,8 +17,8 @@
           <span class="visually-hidden"></span>
         </div>
       </div>
-      <div v-if="!isLoading && caseData.data.length != 0" class="row g-4">
-        <div class="col-12 col-sm-6 col-md-3" v-for="item in caseData.data" :key="item.id">
+      <div v-if="!isLoading && caseData?.data.length != 0" class="row g-4">
+        <div class="col-12 col-sm-6 col-md-3" v-for="item in caseData?.data" :key="item.id">
           <div class="card h-100">
             <img :src="item.image" :alt="item.title" class="card-img-top" alt="case1">
             <div class="card-body d-flex flex-column justify-content-between">
@@ -26,7 +26,7 @@
                 <h6 class="card-title">{{ item.title }}</h6>
                 <p class="card-text my-3">{{ item.description }}</p>
               </div>
-              <nuxt-link to="/service" class="btn btn-primary rounded-0 text-white">Read More</nuxt-link>
+              <nuxt-link to="/service" class="btn btn-primary rounded-0 text-white">看更多 ...</nuxt-link>
             </div>
           </div>
         </div>

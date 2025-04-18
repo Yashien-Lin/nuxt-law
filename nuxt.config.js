@@ -35,6 +35,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     mongodbUri: process.env.MONGODB_URI, // 僅服務端可用
+    public: {
+      apiBase: 'http://localhost:1337' // 僅服務端可用
+      // strapiUrl: process.env.STRAPI_URL, // 僅服務端可用
+    }
   },
   vue: {
     config: {

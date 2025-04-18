@@ -13,9 +13,6 @@
       <div class="text-center">
         <h2 class="mb-3">專業律師</h2>
       </div>
-      <div class="w-100 d-flex flex-wrap justify-content-end">
-        <button type="button" class="btn btn-primary" @click="addTeam">增加成員</button>
-      </div>
       <clientOnly>
         <div v-if="isLoading" class="d-flex gap-4">
           <div class="spinner-grow text-dark d-flex justify-content-center align-items-center" role="status">
@@ -28,27 +25,27 @@
             <span class="visually-hidden"></span>
           </div>
         </div>
-        <div v-if="!isLoading && TeamData.data?.length != 0" class="row g-4">
-          <div class="col-12 col-sm-6 col-md-3" v-for="item in TeamData.data" :key="item.id">
+        <div v-if="!isLoading && TeamData?.data?.length > 0" class="row g-5 main-content">
+          <div class="col-12 col-sm-6 col-md-4" v-for="item in TeamData.data" :key="item.id">
             <div class="card h-100">
-              <img :src="item.image" :alt="item.image" class="card-img-top" alt="case1">
+              <!-- TeamData: {{TeamData.data}} -->
+              <img :src="uri.public.apiBase + item.avatar.url" :alt="item.avatar.url" class="card-img-top" alt="case1">
               <div class="card-body d-flex flex-column justify-content-between px-lg-4">
                 <div class="mb-2">
                   <h3 class="card-title fs-5">
                     {{ item.name }}
-                    <span class="fs-6">{{ item.title }}</span>
+                    <span class="fs-6">{{ getTitle(item.title) }}</span>
                   </h3>
                   <ul class="mb-2">
                     <p class="fw-bold">經歷:</p>
-                    <li v-for="(experience, index) in item.experiences" :key="index" class="card-text">{{ experience }}</li>
+                    <li v-for="(experience, index) in item.experiences" :key="index" class="card-text">{{ experience.text }}</li>
                   </ul>
                   <ul class="mb-2">
                     <p class="fw-bold">負責領域:</p>
-                    <li v-for="(field, index) in item.fields" :key="index" class="card-text">{{ field }}</li>
+                    <li v-for="(field, index) in item.fields" :key="index" class="card-text">{{ field.text }}</li>
                   </ul>
                 </div>
-                <a href="#" class="btn btn-blue rounded-0 text-white mb-2">Read More</a>
-                <a href="#" class="btn btn-danger rounded-0 text-white" @click="deleteTeam(item._id)">Delete, id:{{ item._id }}</a>
+                <a href="#" class="btn btn-blue rounded-0 text-white mb-2">看更多 ...</a>
               </div>
             </div>
           </div>
@@ -66,13 +63,16 @@ const form = ref({
   // _id: '',
   name: '陳柏毅 律師',
   fields: ['消費者保護', '醫療糾紛', '行政訴訟'],
-  image: '/images/member6.jpg',
+  avatar: '/images/member6.jpg',
   experiences: ['輔仁大學法律系學士', '曾於國內知名律師事務所擔任訴訟律師', '公益訴訟協會成員'],
   title: '合夥律師',
 });
 
+
+const getTitle = (title) => title.slice(1); // 取得 title 的值並去除第一個字元
+
 // 取得資料
-const { data: TeamData, error } = useFetch('/api/team', {
+const { data: TeamData, error } = useFetch(`${uri.public.apiBase}/api/authors?populate=*`, {
   async onRequest() {
     isLoading.value = true;
   },
@@ -92,72 +92,6 @@ const { data: TeamData, error } = useFetch('/api/team', {
     console.log('error:', error.value);
   }
 });
-
-// 新增成員
-const { data: postData, refresh: addTeam} = useFetch('/api/team', {
-  method: 'POST',
-  body: form.value,
-  async onRequest() {
-    isLoading.value = true;
-    console.log('post onRequest:', postData.value);
-  },
-  onResponse() {
-    // 請求完成後將 isLoading 設置為 false
-    setTimeout(() => {
-      console.log('post onResponse:', postData.value);
-      console.log('post error:', error.value);
-      
-      // 模擬延遲，並設置 loading 狀態
-      isLoading.value = false;
-    }, 500);  // 模擬延遲
-  },
-  onError() {
-    // 當發生錯誤時，設置 loading 為 false
-    isLoading.value = false;
-    console.log('post error:', error.value);
-  }
-})
-watch(postData, () => {
-  // if (postData.value) {
-    TeamData.value.data = postData.value;
-    console.log('watch data:', TeamData.value);
-  // }
-})
-
-// 刪除成員
-const deleteTeam = async (id) => {
-  const { data, error} = await $fetch(`/api/team/${id}`, {
-    method: 'DELETE',
-    immediate: false,
-    async onRequest() {
-      isLoading.value = true;
-      // console.log('delete onRequest:', deleteData.value);
-    },
-    onResponse() {
-      // 請求完成後將 isLoading 設置為 false
-      setTimeout(() => {
-        // console.log('delete onResponse:', deleteData);
-        console.log('delete ok:', data);
-        
-        // 模擬延遲，並設置 loading 狀態
-        isLoading.value = false;
-        TeamData.value.data = data;
-
-      }, 500);  // 模擬延遲
-    },
-    onError() {
-      // 當發生錯誤時，設置 loading 為 false
-      isLoading.value = false;
-      console.log('post error:', error.value);
-    }
-  })
-}
-
-
-
-
-
-
 
 </script>
 

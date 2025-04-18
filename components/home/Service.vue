@@ -11,6 +11,32 @@
 </template>
 
 <script setup>
+const isLoading = ref(false); 
+
+const config = useRuntimeConfig();
+console.log('config:', config);
+
+// 取得服務項目
+const { data: serviceData, error: serviceError } = useFetch(`${config.public.apiBase}/api/services`, {
+  async onRequest() {
+    isLoading.value = true;
+    // console.log('service onRequest:', serviceData.value);
+  },
+  onResponse() {
+    // 請求完成後將 isLoading 設置為 false
+    setTimeout(() => {
+      // console.log('service onResponse:', serviceData.value);
+      
+      // 模擬延遲，並設置 loading 狀態
+      isLoading.value = false;
+    }, 1000);  // 模擬延遲
+  },
+  onError() {
+    // 當發生錯誤時，設置 loading 為 false
+    isLoading.value = false;
+    // console.log('service error:', serviceError.value);
+  }
+});
 
 </script>
 
