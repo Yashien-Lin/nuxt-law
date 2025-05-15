@@ -1,23 +1,8 @@
 <template>
   <div class="footer-links">
-    <p>© 2024 茂宇聯合法律事務所 All Rights Reserved</p>
+    <!-- <p>© 2025 茂宇聯合法律事務所 All Rights Reserved</p> -->
+    <p>© 2025 正茂聯合法律事務所 All Rights Reserved</p>
   </div>
-  <!-- <ul class="footer-links">
-    <li>
-      <NuxtLink>
-        User Info
-      </NuxtLink>
-    </li>
-    <li>
-      <a href="">Social Links</a>
-    </li>
-    <li>
-      <a href="">About Us</a>
-    </li>
-    <li>
-      <a href="">Customer Service</a>
-    </li>
-  </ul> -->
 </template>
 
 <style lang="scss" scoped>

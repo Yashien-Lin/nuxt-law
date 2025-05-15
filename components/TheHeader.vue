@@ -2,11 +2,12 @@
   <nav>
     <NuxtLink to="/" class="h-100 d-flex align-items-center">
       <img src="/images/logo.png" alt="logo" class="h-100 me-1">
-      <h1 class="fs-6">茂宇聯合法律事務所</h1>
+      <!-- <h1 class="fs-6">茂宇聯合法律事務所</h1> -->
+      <h1 class="fs-6">正茂聯合法律事務所</h1>
     </NuxtLink>
     <ul class="nav-links">
       <li>
-        <NuxtLink to="/about">關於茂宇</NuxtLink>
+        <NuxtLink to="/about">關於正茂</NuxtLink>
       </li>
       <li>
         <NuxtLink to="/team">團隊成員</NuxtLink>

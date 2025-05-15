@@ -9,20 +9,26 @@
       </p>
     </div>
     <div class="main-content d-flex flex-column justify-content-center gap-4 py-6 px-4">
-      <div class="card mb-3 border-0 border-bottom rounded-0 pb-4 ">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="/images/case1.jpg" alt="..." class="object-fit-image">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">民事糾紛 - 房屋租賃糾紛</h5>
-              <p class="card-text lh-lg">
-                張先生因租屋合約未到期即遭房東提前終止租約，並被要求立即搬離。房東同時拒絕退還租金押金，聲稱張先生違反了合約條款。
-                張先生因租屋合約未到期即遭房東提前終止租約，並被要求立即搬離。房東同時拒絕退還租金押金，聲稱張先生違反了合約條款。
-                張先生因租屋合約未到期即遭房東提前終止租約，並被要求立即搬離。房東同時拒絕退還租金押金，聲稱張先生違反了合約條款。
-              </p>
-              <!-- <p class="card-text"><small  class="text-muted">Last updated 3 mins ago</small></p> -->
+      <div v-if="!isLoading && caseData?.data.length != 0" class="row g-4">
+        <div class="card mb-3 border-0 border-bottom rounded-0 pb-4 " v-for="item in caseData?.data" :key="item.id">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img :src="`${config.public.apiBase}${item.image.url}`" :alt="item.title" class="object-fit-image">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <div class="card-text lh-lg">
+                  <div class="mb-2">
+                    <div class="fw-bold">案件簡介</div>
+                    <p>{{ item.description }}</p>
+                  </div>
+                  <div class="mb-2">
+                    <div class="fw-bold">我們的協助</div>
+                    <p>{{ item.solution }}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -40,25 +46,30 @@
 //   isClient.value = true;
 // })
 
-// const isLoading = ref(false);
 
-// const { data, error } = useFetch('/api/cases', {
-//   async onRequest() {
-//     isLoading.value = true;
-//   },
-//   onResponse() {
-//     setTimeout(() => {
-//       console.log('onResponse');
-//       console.log('error', error.value);
+const isLoading = ref(false);
+
+// 取得案例
+const config = useRuntimeConfig();
+const { data: caseData, error:caseError } = useFetch(`${config.public.apiBase}/api/cases?populate=*`, {
+  async onRequest() {
+    isLoading.value = true;
+  },
+  onResponse() {
+    // 請求完成後將 isLoading 設置為 false
+    setTimeout(() => {
+      // console.log('case onResponse:', caseData.value);
       
-//       // 模擬延遲，並設置 loading 狀態
-//     }, 2000);  // 模擬延遲
-//   },
-//   onError() {
-//     // 當發生錯誤時，設置 loading 為 false
-//     console.log('error', error.value);
-//   }
-// });
+      // 模擬延遲，並設置 loading 狀態
+      isLoading.value = false;
+    }, 1000);  // 模擬延遲
+  },
+  onError() {
+    // 當發生錯誤時，設置 loading 為 false
+    isLoading.value = false;
+    console.log('case error:', caseError.value);
+  }
+});
 
 </script>
 

@@ -29,7 +29,7 @@
           <div class="col-12 col-sm-6 col-md-4" v-for="item in TeamData.data" :key="item.id">
             <div class="card h-100">
               <!-- TeamData: {{TeamData.data}} -->
-              <img :src="uri.public.apiBase + item.avatar.url" :alt="item.avatar.url" class="card-img-top" alt="case1">
+              <img :src="config.public.apiBase + item.avatar?.url" :alt="item.avatar?.url" class="card-img-top" alt="case1">
               <div class="card-body d-flex flex-column justify-content-between px-lg-4">
                 <div class="mb-2">
                   <h3 class="card-title fs-5">
@@ -38,14 +38,14 @@
                   </h3>
                   <ul class="mb-2">
                     <p class="fw-bold">經歷:</p>
-                    <li v-for="(experience, index) in item.experiences" :key="index" class="card-text">{{ experience.text }}</li>
+                    <li v-for="(experience, index) in item.experiences" :key="`experience_${index}`" class="card-text">{{ experience.text }}</li>
                   </ul>
                   <ul class="mb-2">
                     <p class="fw-bold">負責領域:</p>
-                    <li v-for="(field, index) in item.fields" :key="index" class="card-text">{{ field.text }}</li>
+                    <li v-for="(field, index) in item.fields" :key="`field_${index}`" class="card-text">{{ field.text }}</li>
                   </ul>
                 </div>
-                <a href="#" class="btn btn-blue rounded-0 text-white mb-2">看更多 ...</a>
+                <!-- <a href="#" class="btn btn-blue rounded-0 text-white mb-2">看更多 ...</a> -->
               </div>
             </div>
           </div>
@@ -72,7 +72,8 @@ const form = ref({
 const getTitle = (title) => title.slice(1); // 取得 title 的值並去除第一個字元
 
 // 取得資料
-const { data: TeamData, error } = useFetch(`${uri.public.apiBase}/api/authors?populate=*`, {
+const config = useRuntimeConfig();
+const { data: TeamData, error } = useFetch(`${config.public.apiBase}/api/authors?populate=*`, {
   async onRequest() {
     isLoading.value = true;
   },
