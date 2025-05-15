@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-07-22',
   devtools: { enabled: true },
+  ssr: true,
+  nitro: {
+    preset: 'static' // 這會在打包時自動產生靜態 HTML
+  },
   css: [
     '@/assets/scss/app.scss',
     '@splidejs/splide/dist/css/splide.min.css'
