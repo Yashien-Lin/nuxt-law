@@ -39,7 +39,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: 'http://localhost:3001' // 僅服務端可用
+      // apiBase: 'http://localhost:3001' // 僅在開發環境使用
+      apiBase: process.env.API_BASE || 'http://localhost:3001'
     }
   },
   vue: {
