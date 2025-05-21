@@ -3,5 +3,6 @@
     <TheHeader />
     <slot />
     <TheFooter />
+    <TheFixedIcon />  
   </div>
 </template>

@@ -61,8 +61,6 @@ const { data: caseData, error:caseError } = useFetch(`${config.public.apiBase}/a
   onResponse() {
     // 請求完成後將 isLoading 設置為 false
     setTimeout(() => {
-      // console.log('case onResponse:', caseData.value);
-      
       // 模擬延遲，並設置 loading 狀態
       isLoading.value = false;
     }, 1000);  // 模擬延遲

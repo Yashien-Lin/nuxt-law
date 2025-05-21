@@ -2,7 +2,7 @@
   <ClientOnly>
     <Splide :options="{ rewind: true, lazyLoad: 'nearby' }" aria-label="My Favorite Images" class="splide-container">
       <SplideSlide class="splide-slide">
-        <img class="splide-image" src="/images/bg-image.jpg" alt="Sample 1">
+        <img class="splide-image" src="/images/bg-image.jpg" alt="bg-image">
         <div class="overlay"></div>
         <div class="index-paragraph position-absolute d-flex flex-column align-items-start py-4 px-5 p-md-6">
           <p class="p-3 text-white">
@@ -10,11 +10,19 @@
             我們的團隊由多位經驗豐富的律師組成，專精於民事、刑事、商業及勞動法等多個領域，旨在協助客戶解決複雜的法律問題。
             我們堅信每一位客戶的需求都值得被傾聽與重視，並以誠信、公正為核心，提供客製化的法律解決方案，成為您最可靠的法律夥伴！
           </p>
-          <nuxt-link class="btn btn-black px-4 py-2 m-3" to="/about">About US</nuxt-link>
+          <nuxt-link class="btn btn-black px-4 py-2 m-3" to="/about">關於我們</nuxt-link>
         </div>
       </SplideSlide>
       <SplideSlide class="splide-slide">
+        <img class="splide-image" src="/images/case1.jpg" alt="case1">
+        <div class="overlay"></div>
+      </SplideSlide>
+      <SplideSlide class="splide-slide">
         <img class="splide-image" src="/images/case2.jpg" alt="case2">
+        <div class="overlay"></div>
+      </SplideSlide>
+      <SplideSlide class="splide-slide">
+        <img class="splide-image" src="/images/case3.jpg" alt="case3">
         <div class="overlay"></div>
       </SplideSlide>
     </Splide>

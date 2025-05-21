@@ -25,11 +25,10 @@
             <span class="visually-hidden"></span>
           </div>
         </div>
-        <div v-if="!isLoading && TeamData?.data?.length > 0" class="row g-5 main-content">
+        <div v-if="!isLoading && TeamData?.data?.length > 0" class="row g-6 main-content">
           <div class="col-12 col-sm-6 col-md-4" v-for="item in TeamData.data" :key="item.id">
             <div class="card h-100">
-              <!-- TeamData: {{TeamData.data}} -->
-              <img :src="config.public.apiBase + item.avatar?.url" :alt="item.avatar?.url" class="card-img-top" alt="case1">
+              <img :src="config.public.apiBase + item.avatar?.url" :alt="item.avatar?.url" class="card-img-top">
               <div class="card-body d-flex flex-column justify-content-between px-lg-4">
                 <div class="mb-2">
                   <h3 class="card-title fs-5">
@@ -59,15 +58,6 @@
 <script setup>
 
 const isLoading = ref(false);
-const form = ref({
-  // _id: '',
-  name: '陳柏毅 律師',
-  fields: ['消費者保護', '醫療糾紛', '行政訴訟'],
-  avatar: '/images/member6.jpg',
-  experiences: ['輔仁大學法律系學士', '曾於國內知名律師事務所擔任訴訟律師', '公益訴訟協會成員'],
-  title: '合夥律師',
-});
-
 
 const getTitle = (title) => title.slice(1); // 取得 title 的值並去除第一個字元
 
@@ -104,5 +94,10 @@ const { data: TeamData, error } = useFetch(`${config.public.apiBase}/api/authors
     padding-right: 160px;
     padding-left: 160px;
   }
+}
+.card-img-top {
+  object-fit: cover;
+  object-position: top;
+  max-height: 450px;
 }
 </style>
