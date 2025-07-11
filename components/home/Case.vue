@@ -8,68 +8,45 @@
         以下分享幾個我們陪伴客戶走過的真實案例:
       </p>
     </div>
-    <!-- Loading -->
-    <ClientOnly>
-      <div v-if="isLoading" class="d-flex gap-4 justify-content-center">
-        <div class="spinner-grow text-dark d-flex justify-content-center align-items-center" role="status">
-          <span class="visually-hidden"></span>
-        </div>
-        <div class="spinner-grow text-dark d-flex justify-content-center align-items-center" role="status">
-          <span class="visually-hidden"></span>
-        </div>
-        <div class="spinner-grow text-dark d-flex justify-content-center align-items-center" role="status">
-          <span class="visually-hidden"></span>
-        </div>
-      </div>
-      <div v-if="!isLoading && caseData?.data.length != 0" class="row g-4">
-        <div class="col-12 col-sm-6 col-md-3" v-for="item in caseData?.data" :key="item.id">
-          <div class="card h-100">
-            <img :src="`${config.public.apiBase}${item.image.url}`" :alt="item.title" class="card-img-top">
-            <div class="card-body h-100 d-flex flex-column justify-content-between">
-              <div>
-                <h6 class="card-title text-primary-120 mb-4">{{ item.title }}</h6>
-                <div class="card-text mb-3">
-                  <div class="mb-3">
-                    <div class="fw-bold">案件簡介</div>
-                    <p class="multiline-truncate-3">{{ item.description }}</p>
-                  </div>
-                  <div class="mb-3">
-                    <div class="fw-bold">我們的協助</div>
-                    <p class="multiline-truncate-4">{{ item.solution }}</p>
-                  </div>
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-md-3" v-for="item in caseData?.data" :key="item.id">
+        <div class="card h-100">
+          <img :src="`${config.public.apiBase}${item.image.url}`" :alt="item.title" class="card-img-top">
+          <div class="card-body h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h6 class="card-title text-primary-120 mb-4">{{ item.title }}</h6>
+              <div class="card-text mb-3">
+                <div class="mb-3">
+                  <div class="fw-bold">案件簡介</div>
+                  <p class="multiline-truncate-3">{{ item.description }}</p>
+                </div>
+                <div class="mb-3">
+                  <div class="fw-bold">我們的協助</div>
+                  <p class="multiline-truncate-4">{{ item.solution }}</p>
                 </div>
               </div>
-              <nuxt-link to="/case" class="btn btn-primary rounded-0 text-white">看更多 ...</nuxt-link>
-            </div>  
-          </div>
+            </div>
+            <nuxt-link to="/case" class="btn btn-primary rounded-0 text-white">看更多 ...</nuxt-link>
+          </div>  
         </div>
       </div>
-    </ClientOnly>
-    <div v-if="!isLoading && caseError">error:{{ caseError.statusMessage }}</div>
+    </div>
   </div>
 </template>
 
 <script setup>
-const isLoading = ref(false);
 
-// 取得案例
 const config = useRuntimeConfig();
-const { data: caseData, error:caseError } = useFetch(`${config.public.apiBase}/api/cases?populate=*`, {
-  async onRequest() {
-    isLoading.value = true;
+const { data: caseData, error } = await useFetch(`${config.public.apiBase}/api/cases?populate=*`, {
+  server: true,
+  lazy: false,
+  onRequestError({ error }) {
+    console.error('Case request error:', error);
   },
-  onResponse() {
-    // 請求完成後將 isLoading 設置為 false
-    setTimeout(() => {
-      // 模擬延遲，並設置 loading 狀態
-      isLoading.value = false;
-    }, 1000);  // 模擬延遲
-  },
-  onError() {
-    // 當發生錯誤時，設置 loading 為 false
-    isLoading.value = false;
-    console.log('case error:', caseError.value);
+  onError({ error }) {
+    console.error('Case fetch error:', error);
   }
+
 });
 
 </script>

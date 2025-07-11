@@ -9,11 +9,11 @@
       </p>
     </div>
     <div class="main-content d-flex flex-column justify-content-center gap-4 py-6 px-4">
-      <div v-if="!isLoading && caseData?.data.length != 0" class="row g-4">
+      <div class="row g-4">
         <div class="card mb-3 border-0 border-bottom rounded-0 pb-4 " v-for="item in caseData?.data" :key="item.id">
           <div class="row g-0">
             <div class="col-md-4">
-              <img :src="`${config.public.apiBase}${item.image.url}`" :alt="item.title" class="object-fit-image">
+              <img :src="`${config.public.apiBase}${item.image?.url}`" :alt="item.title" class="object-fit-image">
             </div>
             <div class="col-md-8">
               <div class="card-body">
@@ -37,42 +37,20 @@
   </div>
 </template>
 
-
 <script setup>
-// import { Splide, SplideSlide } from '@splidejs/vue-splide';
-// const isClient = ref(false);
-
-// onMounted(() => {
-//   isClient.value = true;
-// })
-
-
-const isLoading = ref(false);
-
-// 取得案例
 const config = useRuntimeConfig();
-const { data: caseData, error:caseError } = useFetch(`${config.public.apiBase}/api/cases?populate=*`, {
-  async onRequest() {
-    isLoading.value = true;
+const { data: caseData, error } = await useFetch(`${config.public.apiBase}/api/cases?populate=*`, {
+  server: true,
+  lazy: false,
+  onRequestError({ error }) {
+    console.error('Case page request error:', error);
   },
-  onResponse() {
-    // 請求完成後將 isLoading 設置為 false
-    setTimeout(() => {
-      // console.log('case onResponse:', caseData.value);
-      
-      // 模擬延遲，並設置 loading 狀態
-      isLoading.value = false;
-    }, 1000);  // 模擬延遲
-  },
-  onError() {
-    // 當發生錯誤時，設置 loading 為 false
-    isLoading.value = false;
-    console.log('case error:', caseError.value);
+  onError({ error }) {
+    console.error('Case page fetch error:', error);
   }
 });
 
 </script>
-
 
 <style lang="scss" scoped>
 .title-wrap {
