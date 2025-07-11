@@ -1,6 +1,5 @@
 <template>
   <div class="container-with-navbar">
-    <!-- 關於創辦人 -->
     <div class="title-wrap text-center mb-6 bg-light">
       <h3 class="mb-3">關於創辦人</h3>
       <p class="lh-lg">
@@ -34,23 +33,6 @@
 </template>
 
 <style lang="scss" scoped>
-
-// .bg-banner {
-//   position: relative;
-//   background-image: url("/images/case1.jpg");
-//   background-size: cover;
-//   background-position: center;
-//   height: 100vh;
-//   mask-image: linear-gradient(93deg, transparent 22%, white 23%);
-//   -webkit-mask-image: -webkit-linear-gradient(93deg, transparent 22%, white 23%);
-  
-//   .bg-cover {
-//     background-color: #8c8c8c;
-//     opacity: 0.8;
-//     width: 100%;
-//     height: 100vh;
-//   }
-// }
 
 .title-wrap {
   padding: 2.5rem;

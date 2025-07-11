@@ -17,7 +17,6 @@ const props = defineProps({
   }
 });
 
-
 const handleError = () => clearError({ redirect: '/' })
 
 const errorMessage = {

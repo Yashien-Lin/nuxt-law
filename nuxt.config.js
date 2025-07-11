@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
   nitro: {
-    preset: 'static' // 這會在打包時自動產生靜態 HTML
+    preset: 'static' // 在打包時自動產生靜態HTML(SSG)
   },
   css: [
     '@/assets/scss/app.scss',
@@ -39,7 +39,6 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      // apiBase: 'http://localhost:3001' // 僅在開發環境使用
       apiBase: process.env.API_BASE || 'http://localhost:3001'
     }
   },

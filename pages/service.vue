@@ -13,34 +13,6 @@
   </div>
 </template>
 
-<script setup>
-// const isLoading = ref(true);
-
-// // 取得服務項目
-// const { data: serviceData, error: serviceError } = useFetch('/api/service', {
-//   async onRequest() {
-//     isLoading.value = true;
-//   },
-//   onResponse() {
-//     // 請求完成後將 isLoading 設置為 false
-//     setTimeout(() => {
-//       console.log('onResponse:', serviceData.value);
-//       console.log('error:', serviceError.value);
-      
-//       // 模擬延遲，並設置 loading 狀態
-//       isLoading.value = false;
-//     }, 1000);  // 模擬延遲
-//   },
-//   onError() {
-//     // 當發生錯誤時，設置 loading 為 false
-//     isLoading.value = false;
-//     console.log('error:', serviceError.value);
-//   }
-// });
-
-</script>
-
-
 <style lang="scss" scoped>
 .title-wrap {
   padding: 2.5rem;
