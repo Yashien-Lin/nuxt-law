@@ -1,6 +1,6 @@
 <template>
   <div class="container-with-navbar">
-    <div class="title-wrap text-center mb-6 bg-light">
+    <div class="title-wrap text-center bg-light">
       <h3 class="mb-3">關於創辦人</h3>
       <p class="lh-lg">
         本律師事務所的創辦人是一位具備深厚法律背景與豐富實務經驗的專業律師，
@@ -31,16 +31,3 @@
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-
-.title-wrap {
-  padding: 2.5rem;
-
-  @include media-xl {
-    padding-right: 160px;
-    padding-left: 160px;
-  }
-}
-
-</style>

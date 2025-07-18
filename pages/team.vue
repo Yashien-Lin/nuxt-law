@@ -8,7 +8,7 @@
         我們相信團隊合作能帶來最全面的法律支援，為客戶打造最優化的解決方案，成為您值得信賴的夥伴。
       </p>
     </div>
-    <div class="d-flex flex-column align-items-center justify-content-center gap-4 py-6 px-4">
+    <div class="d-flex flex-column align-items-center justify-content-center gap-4">
       <div class="text-center">
         <h2 class="mb-3">專業律師</h2>
       </div>
@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-const getTitle = (title) => title.slice(1); // 取得 title 的值並去除第一個字元
+const getTitle = (title) => title.slice(1); // 取得 title
 
 // 取得資料
 const config = useRuntimeConfig();
@@ -58,14 +58,6 @@ const { data: TeamData, error } = await useFetch(`${config.public.apiBase}/api/a
 </script>
 
 <style lang="scss" scoped>
-.title-wrap {
-  padding: 2.5rem;
-
-  @include media-xl {
-    padding-right: 160px;
-    padding-left: 160px;
-  }
-}
 .card-img-top {
   object-fit: cover;
   object-position: top;

@@ -32,7 +32,3 @@ if (import.meta.server) {
 }
 
 </script>
-
-<style lang="scss" scoped>
-
-</style>

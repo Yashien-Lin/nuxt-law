@@ -1,6 +1,6 @@
 <template>
   <div class="container-with-navbar">
-    <div class="title-wrap text-center my-6 bg-light">
+    <div class="title-wrap text-center bg-light">
       <h3 class="mb-3">服務項目</h3>
       <p class="lh-lg">
         我們的團隊由多位專業且經驗豐富的律師組成，涵蓋民事、刑事、商業法律、智慧財產權及家庭法律等多個領域。
@@ -12,14 +12,3 @@
     <ServiceCard />
   </div>
 </template>
-
-<style lang="scss" scoped>
-.title-wrap {
-  padding: 2.5rem;
-
-  @include media-xl {
-    padding-right: 160px;
-    padding-left: 160px;
-  }
-}
-</style>

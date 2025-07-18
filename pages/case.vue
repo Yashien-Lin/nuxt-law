@@ -1,6 +1,6 @@
 <template>
   <div class="container-with-navbar">
-    <div class="title-wrap text-center my-6 bg-light">
+    <div class="title-wrap text-center bg-light">
       <h3 class="mb-3">成功案例</h3>
       <p class="lh-lg">
         我們曾成功協助客戶解決多項複雜案件，包括大型企業併購中的法律風險評估與合約談判，以及高爭議性民事訴訟的勝訴。
@@ -8,9 +8,9 @@
         我們的專業與努力，讓每一位客戶在法律挑戰中獲得最佳保障，並深受信賴與肯定。
       </p>
     </div>
-    <div class="main-content d-flex flex-column justify-content-center gap-4 py-6 px-4">
+    <div class="main-content d-flex flex-column justify-content-center gap-4 p-4">
       <div class="row g-4">
-        <div class="card mb-3 border-0 border-bottom rounded-0 pb-4 " v-for="item in caseData?.data" :key="item.id">
+        <div class="card mb-3 border-0 border-bottom rounded-0" v-for="item in caseData?.data" :key="item.id">
           <div class="row g-0">
             <div class="col-md-4">
               <img :src="`${config.public.apiBase}${item.image?.url}`" :alt="item.title" class="object-fit-image">
@@ -51,14 +51,3 @@ const { data: caseData, error } = await useFetch(`${config.public.apiBase}/api/c
 });
 
 </script>
-
-<style lang="scss" scoped>
-.title-wrap {
-  padding: 2.5rem;
-
-  @include media-xl {
-    padding-right: 160px;
-    padding-left: 160px;
-  }
-}
-</style>
