@@ -30,8 +30,12 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@nuxt/image'],
+  image: {
+    provider: 'ipx',
+    domains: [ 'zhengmao-lawfirm.up.railway.app' ],
+  },
   typescript: {
-    typeCheck: true
+    typeCheck: true 
   },
   runtimeConfig: {
     public: {
