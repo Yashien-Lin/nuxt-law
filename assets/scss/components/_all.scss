@@ -2,43 +2,16 @@ body {
   overflow-x: hidden;
   font-size: $font-size-base;
   color: $dark-80;
-
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
-    font-weight: 700;
-  }
-
-  // @include iphone-save-area;
-
-  &.body-zh {
-    .ls-4 {
-      letter-spacing: 4px;
-    }
-
-    .ls-3 {
-      letter-spacing: 3px;
-    }
-
-    $media-array: "xl", "lg", "md", "sm";
-
-    @each $key in $media-array {
-      .lh-#{$key}-sm {
-        line-height: 1.5 !important;
-      }
-    }
-
-    .lh-sm {
-      line-height: 1.5 !important;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      line-height: 1.5 !important;
-    }
-  }
 }
 
 // headings
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+p {
   margin-bottom: 0;
 }
 
@@ -70,11 +43,21 @@ a {
 .container-with-navbar {
   min-height: calc(100vh - $header-height-sm - $footer-height-sm);
 	margin-top: $header-height-sm;
+  margin-bottom: 3.5rem;
   
 	@include media-md {
     min-height: calc(100vh - $header-height - $footer-height);
 		margin-top: $header-height;
 	}
+}
+
+.title-wrap {
+  padding: 3.5rem 2.5rem;
+
+  @include media-xl {
+    padding-right: 160px;
+    padding-left: 160px;
+  }
 }
 
 // custom scrollbar
@@ -166,30 +149,42 @@ a {
 	max-width: 100%;
 	min-height: calc(100vh - 160px);
 
-  // @include media-lg {
-  //   padding-right: 32px;
-  //   padding-left: 32px;
-  // }
+  @include media-lg {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
 }
 
 .main-content {
-	margin-bottom: 64px;
+	// margin-bottom: 64px;
   margin-right: auto;
   margin-left: auto;
   width: 1280px;
   max-width: 100%;
 }
 
-// .nuxt-loading-indicator {
-//   background: repeating-linear-gradient(to right, rgb(245, 245, 245) 0%, rgb(224, 173, 138) 40%, rgb(43, 47, 48) 70%, rgb(0, 0, 0) 100%) !important;
-// } 
+.nuxt-loading-indicator {
+  background: linear-gradient(
+    90deg,
+    #8b650d,
+    #4a3100,
+    #ffd498,
+    #e8a201
+  ) !important;
+  background-size: 200% 100%;
+  animation: loading-bar-gradient 3s linear infinite;
+  height: 4px; // 可調整高度
+}
 
-// spinner
-// .spinner-border {
-//   width: 1rem;
-//   height: 1rem;
-//   border-width: 0.4em;
-// }
+// 動畫
+@keyframes loading-bar-gradient {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 
 .object-fit-image {
   object-fit: cover;

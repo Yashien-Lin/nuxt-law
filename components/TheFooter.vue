@@ -19,7 +19,7 @@
   list-style: none;
   font-size: 0.875rem;
 
-  @include media-md() {
+  @include media-md {
     height: $footer-height;
     font-size: 1rem;
   }
