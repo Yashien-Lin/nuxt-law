@@ -2,7 +2,7 @@
   <ClientOnly>
     <Splide :options="{ rewind: true, lazyLoad: 'nearby' }" aria-label="My Favorite Images" class="splide-container">
       <SplideSlide class="splide-slide">
-        <img class="splide-image" src="/images/bg-image.jpg" alt="bg-image">
+        <img class="splide-image" src="/images/bg-image.webp" alt="bg-image">
         <div class="overlay"></div>
         <div class="index-paragraph position-absolute d-flex flex-column align-items-start py-4 px-5 p-md-6">
           <p class="p-3 text-white">
@@ -14,15 +14,11 @@
         </div>
       </SplideSlide>
       <SplideSlide class="splide-slide">
-        <img class="splide-image" src="/images/case1.jpg" alt="case1">
+        <img class="splide-image" src="/images/case1.webp" alt="case1">
         <div class="overlay"></div>
       </SplideSlide>
       <SplideSlide class="splide-slide">
-        <img class="splide-image" src="/images/case2.jpg" alt="case2">
-        <div class="overlay"></div>
-      </SplideSlide>
-      <SplideSlide class="splide-slide">
-        <img class="splide-image" src="/images/case3.jpg" alt="case3">
+        <img class="splide-image" src="/images/case2.webp" alt="case2">
         <div class="overlay"></div>
       </SplideSlide>
     </Splide>
