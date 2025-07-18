@@ -12,7 +12,7 @@
     </div>
     <div class="main-content row align-items-center justify-content-center gap-4">
       <div class="col-12 col-lg-6 p-0">
-        <img class="w-100" src="/images/founder.jpg" alt="founder">
+        <TheImage src="/images/founder.jpg" alt="founder" />
       </div>
       <div class="col-12 col-lg-5 lh-lg">
         <p class="mb-2 mb-md-4">

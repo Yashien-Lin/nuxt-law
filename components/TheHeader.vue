@@ -4,7 +4,7 @@
       <!-- LOGO -->
       <NuxtLink to="/" class="d-flex align-items-center">
         <div class="image-container">
-          <img src="/images/logo.png" alt="logo">
+          <TheImage src="/images/logo.png" alt="logo" />
         </div>
         <!-- <h1 class="fs-6">茂宇聯合法律事務所</h1> -->
         <h1 class="fs-6">正茂聯合法律事務所</h1>
@@ -77,9 +77,6 @@ watch(route, () => {
     height: $header-height-sm;
     padding: 0.25rem;
     margin-right: 0.25rem;
-    img {
-      height: 100%;
-    }
   }
 
   .nav-menu {

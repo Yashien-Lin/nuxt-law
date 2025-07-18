@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content d-flex flex-column align-items-center justify-content-center gap-4 px-3">
+  <div class="main-content d-flex flex-column align-items-center justify-content-center gap-4 px-3 py-5">
     <div class="text-center">
       <h2 class="mb-3">案例分享</h2>
       <p>
@@ -11,7 +11,7 @@
     <div class="row g-4">
       <div class="col-12 col-sm-6 col-md-3" v-for="item in caseData?.data" :key="item.id">
         <div class="card h-100">
-          <img :src="`${config.public.apiBase}${item.image.url}`" :alt="item.title" class="card-img-top">
+          <TheImage :src="`${config.public.apiBase}${item.image.url}`" :alt="item.title" class="card-img-top" />
           <div class="card-body h-100 d-flex flex-column justify-content-between">
             <div>
               <h6 class="card-title text-primary-120 mb-4">{{ item.title }}</h6>
@@ -59,12 +59,17 @@ const { data: caseData, error } = await useFetch(`${config.public.apiBase}/api/c
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .multiline-truncate-4 {
   display: -webkit-box;
   -webkit-line-clamp: 4; /* 顯示幾行 */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.card-img-top {
+  height: fit-content;
 }
 
 </style>

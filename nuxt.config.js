@@ -29,11 +29,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  // loadingIndicator: {
-  //   name: 'circle',
-  //   color: '#3B82F6',
-  //   background: 'white',
-  // },
+  modules: ['@nuxt/image'],
   typescript: {
     typeCheck: true
   },

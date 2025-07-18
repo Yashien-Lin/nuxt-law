@@ -1,8 +1,8 @@
 <template>
   <ClientOnly>
     <Splide :options="{ rewind: true, lazyLoad: 'nearby' }" aria-label="My Favorite Images" class="splide-container">
-      <SplideSlide class="splide-slide">
-        <img class="splide-image" src="/images/bg-image.webp" alt="bg-image">
+      <SplideSlide class="h-100">
+        <TheImage src="/images/bg-image.webp" alt="bg-image" />
         <div class="overlay"></div>
         <div class="index-paragraph position-absolute d-flex flex-column align-items-start py-4 px-5 p-md-6">
           <p class="p-3 text-white">
@@ -13,12 +13,12 @@
           <nuxt-link class="btn btn-black px-4 py-2 m-3" to="/about">關於我們</nuxt-link>
         </div>
       </SplideSlide>
-      <SplideSlide class="splide-slide">
-        <img class="splide-image" src="/images/case1.webp" alt="case1">
+      <SplideSlide class="h-100">
+        <TheImage src="/images/case1.webp" alt="case1" />
         <div class="overlay"></div>
       </SplideSlide>
-      <SplideSlide class="splide-slide">
-        <img class="splide-image" src="/images/case2.webp" alt="case2">
+      <SplideSlide class="h-100">
+        <TheImage src="/images/case2.webp" alt="case2" />
         <div class="overlay"></div>
       </SplideSlide>
     </Splide>
@@ -36,22 +36,14 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide';
   @include media-sm {
     height: calc(100vh - $footer-height);
   }
-  .splide-slide {
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    .splide-image {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $dark-30;
-      opacity: 0.8;
-    }
+    background-color: $dark-30;
+    opacity: 0.8;
   }
 }
 

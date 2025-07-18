@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="col-12 col-md-6">
-      <img class="w-100" src="/images/vision.jpg" alt="vision">
+      <TheImage src="/images/vision.jpg" alt="vision" />
     </div>
   </div>
 </template>

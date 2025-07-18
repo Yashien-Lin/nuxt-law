@@ -1,5 +1,5 @@
 <template>
-  <div class="container-with-navbar">
+  <div class="container-with-navbar mb-0">
     <!-- 輪播 -->
     <HomeBanner />  
     <!-- 願景 -->

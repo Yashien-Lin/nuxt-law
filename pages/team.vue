@@ -15,7 +15,7 @@
       <div class="row g-6 main-content">
         <div class="col-12 col-sm-6 col-md-4" v-for="item in TeamData?.data" :key="item.id">
           <div class="card h-100">
-            <img :src="config.public.apiBase + item.avatar?.url" :alt="item.avatar?.url" class="card-img-top">
+            <TheImage :src="config.public.apiBase + item.avatar?.url" :alt="item.avatar?.url" className="card-img-top"/>
             <div class="card-body d-flex flex-column justify-content-between px-lg-4">
               <div class="mb-2">
                 <h3 class="card-title fs-5">
@@ -62,5 +62,6 @@ const { data: TeamData, error } = await useFetch(`${config.public.apiBase}/api/a
   object-fit: cover;
   object-position: top;
   max-height: 450px;
+  height: fit-content;
 }
 </style>

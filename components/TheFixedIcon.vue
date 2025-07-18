@@ -1,6 +1,6 @@
 <template>
   <a href="https://www.line.me/tw/" target="_blank" class="line-icon">
-    <img src="/images/line_icon.png" alt="line_icon">
+    <TheImage src="/images/line_icon.png" alt="line_icon" />
   </a>
 </template>
 

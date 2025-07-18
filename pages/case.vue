@@ -13,7 +13,7 @@
         <div class="card mb-3 border-0 border-bottom rounded-0" v-for="item in caseData?.data" :key="item.id">
           <div class="row g-0">
             <div class="col-md-4">
-              <img :src="`${config.public.apiBase}${item.image?.url}`" :alt="item.title" class="object-fit-image">
+              <TheImage :src="`${config.public.apiBase}${item.image?.url}`" :alt="item.title" class="object-fit-image" />
             </div>
             <div class="col-md-8">
               <div class="card-body">
