@@ -29,11 +29,11 @@ export default defineNuxtConfig({
       }
     }
   },
-  loadingIndicator: {
-    name: 'circle',
-    color: '#3B82F6',
-    background: 'white',
-  },
+  // loadingIndicator: {
+  //   name: 'circle',
+  //   color: '#3B82F6',
+  //   background: 'white',
+  // },
   typescript: {
     typeCheck: true
   },

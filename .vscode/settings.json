@@ -3,5 +3,12 @@
     "source.fixAll": "never",
     "source.fixAll.stylelint": "explicit"
   },
-  "stylelint.validate": [ "css", "scss", "vue" ]
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
+  ],
+  "cSpell.words": [
+    "NuxtLink"
+  ]
 }
