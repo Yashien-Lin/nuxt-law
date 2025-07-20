@@ -2,7 +2,7 @@
   <ClientOnly>
     <Splide :options="{ rewind: true, lazyLoad: 'nearby' }" aria-label="My Favorite Images" class="splide-container">
       <SplideSlide class="h-100">
-        <TheImage src="/images/bg-image.webp" alt="bg-image" />
+        <TheImage src="/images/banner_main.jpg" alt="banner_main" />
         <div class="overlay"></div>
         <div class="index-paragraph position-absolute d-flex flex-column align-items-start py-4 px-5 p-md-6">
           <p class="p-3 text-white">
@@ -14,11 +14,11 @@
         </div>
       </SplideSlide>
       <SplideSlide class="h-100">
-        <TheImage src="/images/case1.webp" alt="case1" />
+        <TheImage src="/images/case1.jpg" alt="case1" />
         <div class="overlay"></div>
       </SplideSlide>
       <SplideSlide class="h-100">
-        <TheImage src="/images/case2.webp" alt="case2" />
+        <TheImage src="/images/case2.jpg" alt="case2" />
         <div class="overlay"></div>
       </SplideSlide>
     </Splide>
@@ -43,7 +43,7 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide';
     width: 100%;
     height: 100%;
     background-color: $dark-30;
-    opacity: 0.8;
+    opacity: 0.55;
   }
 }
 

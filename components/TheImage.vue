@@ -1,5 +1,6 @@
 <template>
-  <NuxtImg :src="src" :alt="alt" format="webp" class="object-fit-image" :class="className" />
+  <!-- <NuxtImg :src="src" :alt="alt" format="webp" class="object-fit-image" :class="className" /> -->
+  <img :src="src" :alt="alt" class="object-fit-image" :class="className" />
 </template>
 
 <script setup>
