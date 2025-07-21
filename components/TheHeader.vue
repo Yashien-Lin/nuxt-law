@@ -73,9 +73,15 @@ watch(route, () => {
     font-weight: bold;
   }
   .image-container {
-    height: $header-height-sm;
+    max-width: 72px;
+    width: 100%;
     padding: 0.25rem;
     margin-right: 0.25rem;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 
   .nav-menu {
