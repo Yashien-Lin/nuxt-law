@@ -38,13 +38,16 @@ $dark-100: $dark;
 $dark-80: #121212;
 $dark-60: #3A3A3A;
 $dark-30: #8C8C8C;
-$gray-base: (
+$dark-10: #dee2e6;
+$dark-base: (
 	"dark-100": $dark-100,
 	"dark-80": $dark-80,
   "dark-60": $dark-60,
-	"dark-30": $dark-30
+	"dark-30": $dark-30,
+	"dark-10": $dark-10	
 ) !default;
 
 // base color
 $body-color: $black;
 $input-placeholder-color: $dark-30;
+$border-color: $dark-10;

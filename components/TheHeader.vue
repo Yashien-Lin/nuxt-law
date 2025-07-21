@@ -6,8 +6,7 @@
         <div class="image-container">
           <TheImage src="/images/logo.png" alt="logo" />
         </div>
-        <!-- <h1 class="fs-6">茂宇聯合法律事務所</h1> -->
-        <h1 class="fs-6">正茂聯合法律事務所</h1>
+        <h1 class="fs-6">茂宇聯合法律事務所</h1>
       </NuxtLink>
       <!-- icon -->
       <input type="checkbox" id="navbarBtn" name="navbarBtn" v-model="isOpen">
@@ -17,7 +16,7 @@
       <!-- menu -->
       <ul class="nav-menu">
         <li class="nav-item">
-          <NuxtLink to="/about">關於正茂</NuxtLink>
+          <NuxtLink to="/about">關於茂宇</NuxtLink>
         </li> 
         <li class="nav-item">
           <NuxtLink to="/team">團隊成員</NuxtLink>

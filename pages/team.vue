@@ -9,10 +9,10 @@
       </p>
     </div>
     <div class="d-flex flex-column align-items-center justify-content-center gap-4">
-      <div class="text-center">
-        <h2 class="mb-3">專業律師</h2>
-      </div>
       <div class="row g-6 main-content">
+        <div class="text-center mt-0">
+          <h2 class="mb-3">專業律師</h2>
+        </div>
         <div class="col-12 col-sm-6 col-md-4" v-for="item in TeamData?.data" :key="item.id">
           <div class="card h-100">
             <TheImage :src="config.public.apiBase + item.avatar?.url" :alt="item.avatar?.url" className="card-img-top"/>

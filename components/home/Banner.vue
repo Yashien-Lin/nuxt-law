@@ -43,7 +43,7 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide';
     width: 100%;
     height: 100%;
     background-color: $dark-30;
-    opacity: 0.55;
+    opacity: 0.5;
   }
 }
 
