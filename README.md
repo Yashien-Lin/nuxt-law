@@ -1,75 +1,28 @@
-# Nuxt 3 Minimal Starter
+# Law Firm Website Project
+## 🌐Live Demo
+👉 [View Demo](https://zhengmao-lawfirm.netlify.app/)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 📖 Overview
+This is a responsive website for a law firm, featuring firm information, lawyer profiles, services, and an online consultation form. All content is managed via Strapi headless CMS for easy updates.
 
-## Setup
+## ✨ Features
+- Homepage
+- Team Page
+- Services Page
+- Online Consultation Form
+- Responsive Design
 
-Make sure to install the dependencies:
+## 🛠 Tech Stack
+- **Frontend**: Nuxt 3
+- **Backend / CMS**: Strapi (headless CMS)
+- **Styling:** Bootstrap
 
-```bash
-# npm
-npm install
+## 🚀 Installation & Setup
+### Install dependencies
+`npm install`
 
-# pnpm
-pnpm install
+### Run development server
+`npm run dev`
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Build for production
+`npm run build`
