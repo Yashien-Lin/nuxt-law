@@ -4,7 +4,6 @@
     :alt="alt"
     :width="width"
     :height="height"
-    format="webp"
     class="object-fit-image"
     :class="className"
     :priority="priority"
