@@ -3,21 +3,25 @@
     <div class="navbar-container w-100 position-relative d-flex">
       <!-- LOGO -->
       <NuxtLink to="/" class="d-flex align-items-center">
-        <div class="image-container">
-          <TheImage src="/images/logo.png" alt="logo" />
-        </div>
-        <h1 class="fs-6">茂宇聯合法律事務所</h1>
+        <img
+          src="/images/logo.png"
+          alt="logo"
+          width="64px"
+          height="64px"
+          class="me-1"
+        />
+        <h1 class="fs-6">正茂聯合法律事務所</h1>
       </NuxtLink>
       <!-- icon -->
-      <input type="checkbox" id="navbarBtn" name="navbarBtn" v-model="isOpen">
-      <div class="navbar-button" :class="{ 'open' : isOpen }">
+      <input type="checkbox" id="navbarBtn" name="navbarBtn" v-model="isOpen" />
+      <div class="navbar-button" :class="{ open: isOpen }">
         <div class="navbar-icon"></div>
       </div>
       <!-- menu -->
       <ul class="nav-menu">
         <li class="nav-item">
-          <NuxtLink to="/about">關於茂宇</NuxtLink>
-        </li> 
+          <NuxtLink to="/about">關於正茂</NuxtLink>
+        </li>
         <li class="nav-item">
           <NuxtLink to="/team">團隊成員</NuxtLink>
         </li>
@@ -33,16 +37,15 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref } from "vue";
+import { useRoute } from "vue-router";
 
 const isOpen = ref(false);
 const route = useRoute();
 
 watch(route, () => {
-  isOpen.value = false
-})
-
+  isOpen.value = false;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -71,17 +74,6 @@ watch(route, () => {
     margin: 0;
     font-size: 2rem;
     font-weight: bold;
-  }
-  .image-container {
-    max-width: 72px;
-    width: 100%;
-    padding: 0.25rem;
-    margin-right: 0.25rem;
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
   }
 
   .nav-menu {
@@ -132,7 +124,7 @@ watch(route, () => {
       }
     }
   }
-  
+
   input[type="checkbox"]:checked ~ .nav-menu {
     transform: translateX(0);
   }
@@ -147,15 +139,16 @@ watch(route, () => {
     opacity: 0;
     cursor: pointer;
   }
-  
+
   @include media-md {
-    input[type="checkbox"], .navbar-button {
+    input[type="checkbox"],
+    .navbar-button {
       display: none;
     }
   }
 
   .navbar-button {
-    position: absolute;  
+    position: absolute;
     height: 32px;
     width: 32px;
     top: 0px;
@@ -176,7 +169,7 @@ watch(route, () => {
       top: 40px;
       right: 0;
       background-color: $white;
-      
+
       &::before {
         transition-duration: 0.3s;
         position: absolute;
@@ -186,7 +179,7 @@ watch(route, () => {
         content: "";
         top: -12px;
       }
-      
+
       &::after {
         transition-duration: 0.3s;
         position: absolute;
@@ -197,12 +190,12 @@ watch(route, () => {
         top: 12px;
       }
     }
-    
+
     &.open {
       .navbar-icon {
         transition-duration: 0.3s;
         background: transparent;
-        
+
         &::before {
           transform: rotateZ(45deg) scaleX(1.25) translate(5px, 2px);
         }
@@ -212,11 +205,10 @@ watch(route, () => {
         }
       }
     }
-    
+
     &:hover {
       cursor: pointer;
     }
   }
-  
 }
 </style>

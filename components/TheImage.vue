@@ -1,6 +1,14 @@
 <template>
-  <!-- <NuxtImg :src="src" :alt="alt" format="webp" class="object-fit-image" :class="className" /> -->
-  <img :src="src" :alt="alt" class="object-fit-image" :class="className" />
+  <NuxtImg
+    :src="src"
+    :alt="alt"
+    :width="width"
+    :height="height"
+    format="webp"
+    class="object-fit-image"
+    :class="className"
+    :priority="priority"
+  />
 </template>
 
 <script setup>
@@ -13,12 +21,18 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  width: {
+    type: [Number, String],
+    required: true,
+  },
+  height: {
+    type: [Number, String],
+    required: true,
+  },
   className: {
     type: String,
     default: "",
-  }
+  },
+  priority: { type: Boolean, default: false }, // 可控制第一張圖是否 preload
 });
 </script>
-
-
-

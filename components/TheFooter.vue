@@ -1,6 +1,6 @@
 <template>
   <div class="footer-links">
-    <p>© 2025 茂宇聯合法律事務所 All Rights Reserved</p>
+    <p>© 2025 正茂聯合法律事務所 All Rights Reserved</p>
   </div>
 </template>
 
