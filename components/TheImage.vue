@@ -22,11 +22,11 @@ const props = defineProps({
   },
   width: {
     type: [Number, String],
-    required: true,
+    required: false,
   },
   height: {
     type: [Number, String],
-    required: true,
+    required: false,
   },
   className: {
     type: String,
