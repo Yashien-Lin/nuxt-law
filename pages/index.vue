@@ -30,16 +30,12 @@ const { data: serviceData, error: caseError } = await useServices();
 
 // SSG / SSR build 時：
 if (serviceError.value) {
-  throw createError({
-    statusCode: 500,
-    statusMessage: "Failed to fetch services",
-  });
+  console.warn("Failed to fetch services, fallback to empty array");
+  serviceData.value = [];
 }
 
 if (caseError.value) {
-  throw createError({
-    statusCode: 500,
-    statusMessage: "Failed to fetch cases",
-  });
+  console.warn("Failed to fetch cases, fallback to empty array");
+  caseData.value = [];
 }
 </script>

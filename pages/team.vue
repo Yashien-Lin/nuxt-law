@@ -71,10 +71,8 @@ const config = useRuntimeConfig();
 const { data: memberData, error: memberError } = await useMembers();
 
 if (memberError.value) {
-  throw createError({
-    statusCode: 500,
-    statusMessage: "Failed to fetch members",
-  });
+  console.warn("Failed to fetch members, fallback to empty array");
+  memberData.value = [];
 }
 </script>
 

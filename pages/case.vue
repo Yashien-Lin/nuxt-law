@@ -48,10 +48,8 @@ const config = useRuntimeConfig();
 const { data: caseData, error: caseError } = await useCases();
 
 if (caseError.value) {
-  throw createError({
-    statusCode: 500,
-    statusMessage: "Failed to fetch cases",
-  });
+  console.warn("Failed to fetch cases, fallback to empty array");
+  caseData.value = [];
 }
 </script>
 
