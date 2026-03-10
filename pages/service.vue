@@ -9,6 +9,10 @@
       </p>
     </div>
     <!-- 服務項目 -->
-    <ServiceCard />
+    <ServiceCard :services="serviceData?.data || []" />
   </div>
 </template>
+
+<script setup>
+const { data: serviceData } = await useServices();
+</script>

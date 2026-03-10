@@ -11,7 +11,7 @@
     <div class="row g-4 main-content">
       <div
         class="card rounded-0 mt-0 py-3"
-        v-for="item in caseData?.data"
+        v-for="item in caseData?.data || []"
         :key="item.id"
       >
         <div class="row g-0">
@@ -45,19 +45,14 @@
 
 <script setup>
 const config = useRuntimeConfig();
-const { data: caseData, error } = await useFetch(
-  `${config.public.apiBase}/api/cases?populate=*`,
-  {
-    server: true,
-    lazy: false,
-    onRequestError({ error }) {
-      console.error("Case page request error:", error);
-    },
-    onError({ error }) {
-      console.error("Case page fetch error:", error);
-    },
-  },
-);
+const { data: caseData, error: caseError } = await useCases();
+
+if (caseError.value) {
+  throw createError({
+    statusCode: 500,
+    statusMessage: "Failed to fetch cases",
+  });
+}
 </script>
 
 <style lang="scss" scoped>

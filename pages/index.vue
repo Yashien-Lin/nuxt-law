@@ -5,9 +5,9 @@
     <!-- 願景 -->
     <HomeVision />
     <!-- 服務項目 -->
-    <HomeService />
+    <HomeService :services="serviceData?.data || []" />
     <!-- 案例分享 -->
-    <HomeCase />
+    <HomeCase :cases="caseData?.data || []" />
     <!-- google map -->
     <div style="width: 100%; height: 450px">
       <client-only>
@@ -25,15 +25,21 @@
 </template>
 
 <script setup>
-if (import.meta.prerender) {
-  console.log("prerender");
+const { data: caseData, error: serviceError } = await useCases();
+const { data: serviceData, error: caseError } = await useServices();
+
+// SSG / SSR build 時：
+if (serviceError.value) {
+  throw createError({
+    statusCode: 500,
+    statusMessage: "Failed to fetch services",
+  });
 }
 
-if (import.meta.client) {
-  console.log("client");
-}
-
-if (import.meta.server) {
-  console.log("server");
+if (caseError.value) {
+  throw createError({
+    statusCode: 500,
+    statusMessage: "Failed to fetch cases",
+  });
 }
 </script>
